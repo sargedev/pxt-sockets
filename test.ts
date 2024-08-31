@@ -3,7 +3,7 @@ control.runInParallel(function() {
     console.log(`connecting to http://hopeful-doe-notably.ngrok-free.app/`)
 
     // string tests
-    const ws = new WebSocket("ws://hopeful-doe-notably.ngrok-free.app")
+    const ws = new WebSocket("wss://hopeful-doe-notably.ngrok-free.app")
     ws.onerror = () => console.log("error")
     ws.onmessage = (msg) => {
         const data = msg.data;
