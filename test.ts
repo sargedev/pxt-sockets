@@ -7,9 +7,11 @@ control.runInParallel(function() {
         ws.onerror = () => console.log("error")
         ws.onmessage = (msg) => {
             const data = msg.data;
-            console.log(`--> ${data}`)
+            console.log(`[Recieved] ${data}`)
         }
         ws.onopen = () => {
-            ws.send("makecode test");
+            const msg = "Sarge test";
+            ws.send(msg);
+            console.log(`[Sent] ${msg}`);
         }    
 })
