@@ -32,6 +32,8 @@ function showLoginMenu(args: {username?: string, password?: string}) {
         "Log In",
         "Back"
     ]
+    blockMenu.showMenu(options, MenuStyle.List, MenuLocation.BottomHalf);
+    menu = Menu.LogIn;
 }
 
 blockMenu.onMenuOptionSelected((option: string, index: number) => {
