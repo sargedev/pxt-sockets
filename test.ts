@@ -12,7 +12,7 @@ control.runInParallel(function() {
     const ws = new WebSocket(`wss://${domain}`)
     ws.onerror = (e: Event) => console.log("error")
     ws.onmessage = (msg) => {
-        const printData = JSON.stringify(msg.data as object);
+        const printData = JSON.stringify(msg.data);
         console.log(`[Recieved] ${printData}`)
     }
     ws.onopen = () => {
