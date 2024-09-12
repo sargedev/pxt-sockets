@@ -3,11 +3,13 @@
     "version": "0.1.2",
     "description": "A low level library to mimic WebSockets in MakeCode Arcade",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "block-menu": "github:riknoll/arcade-custom-menu#v0.0.1"
     },
     "files": [
         "main.ts",
-        "README.md"
+        "README.md",
+        "interface.ts"
     ],
     "testFiles": [
         "test.ts"
