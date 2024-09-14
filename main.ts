@@ -1,3 +1,5 @@
+game.consoleOverlay.setVisible(true);
+
 const OPEN_EVENT_TYPE = "open"
 const CLOSE_EVENT_TYPE = "close"
 const MESSAGE_EVENT_TYPE = "message"

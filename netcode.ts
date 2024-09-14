@@ -35,16 +35,20 @@ class SocketHandler {
     }
 }
 
-game.consoleOverlay.setVisible(true);
+let dispatcher: SocketHandler;
+timer.background(() => {
+    const connection = new WebSocket("wss://makecodelive.ddns.net:443");
+    dispatcher = new SocketHandler(connection);
+})
 
-const connection = new WebSocket("wss://makecodelive.ddns.net:443");
-let dispatcher = new SocketHandler(connection);
+pause(0);
 
 let start = game.runtime();
-connection.send(JSON.stringify({
+dispatcher.socket.send(JSON.stringify({
     action: "handshake",
     data: {}
 }))
+console.log("Sent handshake");
 
 dispatcher.subscribe((res) => {
     if (res["action"] === "handshake" && res["response"] === "success") {
