@@ -1,4 +1,6 @@
 
+const MIN_PASSWORD_LENGTH = 4;
+
 enum Menu {
     Main,
     CreateAccount,
@@ -85,3 +87,11 @@ blockMenu.onMenuOptionSelected((option: string, index: number) => {
         }
     }
 })
+
+function handleCreateAccount() {
+    if (!username) game.splash("Username is required");
+    else if (!password) game.splash("Password is required");
+    else if (password.length < MIN_PASSWORD_LENGTH) game.splash("Password must be 4 or more characters");
+    else if (!confirm) game.splash("Please confirm your password");
+    else if (password !== confirm) game.splash("Password does not match");
+}
