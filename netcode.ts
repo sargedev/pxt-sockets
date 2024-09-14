@@ -14,6 +14,7 @@ class SocketHandler {
     
     constructor(socket: WebSocket) {
         this.socket = socket;
+        this.handlers = [];
         socket.onmessage = (msg) => this.broadcast(msg);
     }
 
@@ -24,7 +25,7 @@ class SocketHandler {
     private validate(msg: MessageEvent): Result {
         let json = JSON.stringify(msg.data as string) as Response;
         if (!json) return {error: ERR_EMPTY_RESPONSE};
-        if (!json["action"] || !json["data"]) return {error: ERR_INVALID_RESPONSE};
+        if (!json["action"] || !json["response"]) return {error: ERR_INVALID_RESPONSE};
         return {response: json};
     }
 
@@ -33,3 +34,20 @@ class SocketHandler {
         this.handlers.forEach((value) => value(response));
     }
 }
+
+game.consoleOverlay.setVisible(true);
+
+const connection = new WebSocket("wss://makecodelive.ddns.net:443");
+let dispatcher = new SocketHandler(connection);
+
+let start = game.runtime();
+connection.send(JSON.stringify({
+    action: "handshake",
+    data: {}
+}))
+
+dispatcher.subscribe((res) => {
+    if (res["action"] === "handshake" && res["response"] === "success") {
+        console.log(`Connected to server in ${game.runtime() - start}ms`)
+    }
+})
