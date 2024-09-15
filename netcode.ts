@@ -46,7 +46,7 @@ timer.background(() => {
 pause(0);
 
 let start = game.runtime();
-dispatcher.socket.send(JSON.stringify({
+dispatcher.socket.onopen = () => dispatcher.socket.send(JSON.stringify({
     action: "handshake",
     data: {}
 }))
