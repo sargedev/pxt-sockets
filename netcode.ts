@@ -38,7 +38,7 @@ class SocketHandler {
 }
 
 let dispatcher: SocketHandler;
-timer.background(() => {
+control.runInParallel(() => {
     const connection = new WebSocket("wss://makecodelive.ddns.net:443");
     dispatcher = new SocketHandler(connection);
 })

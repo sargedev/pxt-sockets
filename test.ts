@@ -1,6 +1,6 @@
 
 game.consoleOverlay.setVisible(true);
-const version = "0.1.7";
+const version = "0.1.8";
 console.log(`WebSockets test v${version}`);
 
 /*
