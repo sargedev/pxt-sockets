@@ -1,4 +1,6 @@
 
+game.consoleOverlay.setVisible(true);
+
 const ERR_EMPTY_RESPONSE = "Response is empty or invalid";
 const ERR_INVALID_RESPONSE = "Invalid response";
 
