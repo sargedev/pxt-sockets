@@ -53,6 +53,7 @@ dispatcher.socket.onopen = () => dispatcher.socket.send(JSON.stringify({
 console.log("Sent handshake");
 
 dispatcher.subscribe((res) => {
+    console.log("Recieved packet " + JSON.stringify(res));
     if (res["action"] === "handshake" && res["response"] === "success") {
         console.log(`Connected to server in ${game.runtime() - start}ms`)
     }
