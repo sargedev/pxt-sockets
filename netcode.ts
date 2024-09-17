@@ -14,9 +14,9 @@ control.runInParallel(() => {
 
         client.send("Test message");
         console.log("[Sent] Test message");
+    }
 
-        client.onmessage = (msg) => {
-            console.log(`[Server] ${msg}`);
-        }
+    client.onmessage = (msg) => {
+        console.log(`[Server] ${msg}`);
     }
 })
