@@ -1,5 +1,5 @@
 
-const version = "0.2.0";
+const version = "0.2.1";
 const domain = "makecodelive.ddns.net:443";
 game.consoleOverlay.setVisible(true);
 
