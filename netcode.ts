@@ -4,7 +4,7 @@ namespace userconfig {
     export const ARCADE_SCREEN_HEIGHT = 240;
 }
 
-const version = "0.2.3";
+const version = "0.2.4";
 const domain = "hopeful-doe-notably.ngrok-free.app";
 game.consoleOverlay.setVisible(true);
 
