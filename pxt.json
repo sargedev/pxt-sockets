@@ -4,18 +4,16 @@
     "description": "A low level library to mimic WebSockets in MakeCode Arcade",
     "dependencies": {
         "device": "*",
-        "block-menu": "github:riknoll/arcade-custom-menu#v0.0.1",
-        "Timers": "github:microsoft/arcade-timers#v1.1.0"
+        "arcade-fancy-text": "github:riknoll/arcade-fancy-text#v0.1.1"
     },
     "files": [
         "main.ts",
         "README.md",
-        "interface.ts",
         "netcode.ts"
     ],
     "testFiles": [],
     "targetVersions": {
-        "target": "1.12.56",
+        "target": "4.1.17",
         "targetId": "arcade"
     },
     "supportedTargets": [

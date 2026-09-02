@@ -1,6 +1,6 @@
 
-const version = "0.2.1";
-const domain = "makecodelive.ddns.net:443";
+const version = "0.2.2";
+const domain = "hopeful-doe-notably.ngrok-free.app";
 game.consoleOverlay.setVisible(true);
 
 console.log(`WebSockets test v${version}`);
