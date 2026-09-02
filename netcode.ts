@@ -8,15 +8,15 @@ const version = "0.2.3";
 const domain = "hopeful-doe-notably.ngrok-free.app";
 game.consoleOverlay.setVisible(true);
 
-console.log(`WebSockets test v${version}`);
-console.log("Press A to connect to server");
-
-controller.A.pauseUntil(ControllerButtonEvent.Pressed);
-
-const client = new WebSocket(`wss://${domain}`);
-console.log(`Connecting to ${domain}...`);
-
 control.runInParallel(() => {
+    console.log(`WebSockets test v${version}`);
+    console.log("Press A to connect to server");
+
+    controller.A.pauseUntil(ControllerButtonEvent.Pressed);
+
+    const client = new WebSocket(`wss://${domain}`);
+    console.log(`Connecting to ${domain}...`);
+
     client.onopen = () => {
         console.log("Connected to server");
 
@@ -25,7 +25,7 @@ control.runInParallel(() => {
     }
 
     client.onerror = (e) => {
-        console.log(e);
+        console.log(`An error occurred: ${e}`);
     }
 
     client.onmessage = (msg) => {
